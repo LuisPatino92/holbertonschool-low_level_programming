@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -c $CFILE > $(echo $(echo $CFILE | cut -d . -f 1 | cat).s)
+gcc -S $CFILE > $(echo $(echo $CFILE | cut -d . -f 1 | cat).s)
