@@ -1,3 +1,2 @@
 #!/bin/bash
-echo $(gcc -E main.c) >> c
-#!/bin/bash
+gcc -E main.c -o c
