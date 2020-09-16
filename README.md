@@ -1,0 +1,1 @@
+This folder contains the excersices in C of the Holberton foundations program, *#cisfun*
