@@ -44,7 +44,7 @@ int pot(int base, int exp)
 }
 
 /**
-  * Function main - Generate random num and prints last digit with a message.
+  *main - Generate random num and prints last digit with a message.
   *
   * Return: Always 0.
   */
