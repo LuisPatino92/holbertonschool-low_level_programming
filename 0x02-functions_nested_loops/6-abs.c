@@ -7,7 +7,7 @@
  * Return: absValue the absolute value of n
  */
 
-int _abs(int n);
+int _abs(int n)
 {
 	int absValue;
 
