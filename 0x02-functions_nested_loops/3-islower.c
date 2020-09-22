@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-/*
+/**
  * _islower - Checks if the input is lowercase
  *
  * @c: int - is the char to be checked in ASCII code
