@@ -1,7 +1,7 @@
 #include "holberton.c"
 int _putchar(char c);
 
-/*
+/**
  * main - prints "Holberton"
  *
  * Return: Always 0 - Success
