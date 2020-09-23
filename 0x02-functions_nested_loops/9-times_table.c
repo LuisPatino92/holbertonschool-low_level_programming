@@ -1,12 +1,9 @@
 #include "holberton.h"
 
 /**
+ * times_table - Prints the times table
  *
- *
- *
- *
- *
- *
+ * Return: Void
  */
 
 void times_table(void)
@@ -16,7 +13,7 @@ void times_table(void)
 
 	for (i = 0; i <= 9; i++)
 	{
-		for (j = 0; j <= 9; j++ )
+		for (j = 0; j <= 9; j++)
 		{
 
 			num = i * j;
@@ -38,12 +35,10 @@ void times_table(void)
 			_putchar(44);
 			_putchar(32);
 
-			if ((i * (j + 1))<10)
+			if ((i * (j + 1)) < 10)
 				_putchar(32);
 			}
 		}
 		_putchar(10);
 	}
-
-	return;
 }
