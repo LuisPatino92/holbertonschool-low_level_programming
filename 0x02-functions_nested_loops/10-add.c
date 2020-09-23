@@ -3,7 +3,8 @@
 /**
  * add - adds two integers and returns its sum
  *
- *
+ * @num1: First integer to be sum
+ * @num2: Second integer to be sum
  *
  * Return: The sum of two integers.
  */
