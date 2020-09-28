@@ -1,0 +1,1 @@
+This folder has the \"0x05\" pointers and arrays project.
