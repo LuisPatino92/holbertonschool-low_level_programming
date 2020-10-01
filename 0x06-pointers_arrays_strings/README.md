@@ -1,0 +1,1 @@
+this folder contains all the excersices of the 0x06 Project.
