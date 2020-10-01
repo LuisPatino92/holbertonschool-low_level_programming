@@ -15,17 +15,15 @@ char *_strcat(char *dest, char *src)
 
 	while (*(dest + i) != 0)
 	{
-		printf("\nadentro del primer ciclo %d\n", i);
 		i++;
 	}
-	n = i - 1;
+
+	n = i;
 
 	i = 0;
 
 	while (*(src + i) != 0)
 	{
-		printf("\nadentro del segundo ciclo %d\n", i);
-
 		*(dest + (n + i)) = *(src + i);
 		i++;
 	}
