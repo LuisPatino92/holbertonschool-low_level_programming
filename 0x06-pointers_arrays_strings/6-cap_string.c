@@ -15,16 +15,25 @@ char *cap_string(char *toUP)
 
 	for (i = 0; *(toUP + i); i++)
 	{
-
-		if (i == 0 || *(toUP + i) == 32)
+		if (*(toUP + i) == 32)
 		{
 			for (j = 97; j <= 122; j++)
 			{
 				if (toUP[i + 1] == j)
+					toUP[i + 1] = j - 32;
+			}
+		}
+
+		if (i == 0)
+		{
+			for (j = 97; j <= 122; j++)
+			{
+				if (toUP[i] == j)
 					toUP[i] = j - 32;
 			}
 
 		}
+
 	}
 
 	return (toUP);
