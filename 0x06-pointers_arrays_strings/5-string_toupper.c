@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * string_tuupper - Capitalizes a string
+ * string_toupper - Capitalizes a string
  *
  * @toUP: String to be capitalized
  * Return: Capitelized string
