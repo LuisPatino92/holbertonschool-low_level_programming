@@ -25,6 +25,7 @@ char *cap_string(char *toUP)
 			}
 
 		}
+	}
 
 	return (toUP);
 }
