@@ -15,7 +15,7 @@ int main(void)
 	{
 		putchar(letter);
 		letter++;
-		if (letter == 57)
+		if (letter == 58)
 			letter = 97;
 		else if (letter == 103)
 			letter = 10;
