@@ -8,21 +8,19 @@
 
 int main(void)
 {
-	int n = 152488797, i, maxprime = 0, nAux;
+	long int n = 612852475143, i, maxprime = 0;
 
-	nAux = n;
-
-	for (i = 2; i <= n / 2; i++)
+	for (i = 2; i <= n; i++)
 	{
-		if (nAux % i == 0)
+		if (n % i == 0)
 		{
-			nAux = nAux / i;
+			n = n / i;
 			maxprime = i;
 			i--;
 		}
 
-	}
-	printf("%d", n);
+		}
+	printf("%ld\n", maxprime);
 	return (0);
 
 }
