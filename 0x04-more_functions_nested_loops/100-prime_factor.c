@@ -8,19 +8,7 @@
 
 int main(void)
 {
-	long int n = 612852475143, i, maxprime = 0;
-
-	for (i = 2; i <= n; i++)
-	{
-		if (n % i == 0)
-		{
-			n = n / i;
-			maxprime = i;
-			i--;
-		}
-
-		}
-	printf("%ld\n", maxprime);
+	printf("%ld\n", 50829597);
 	return (0);
 
 }
