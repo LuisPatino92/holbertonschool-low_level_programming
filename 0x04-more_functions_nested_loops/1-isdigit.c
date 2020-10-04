@@ -4,7 +4,7 @@
  * _isdigit - checks if the entry is a digit
  *
  * @c: is the int to be checked
- * Returns: 1 if is a digit - 0 otherwise
+ * Return: 1 if is a digit - 0 otherwise
  */
 
 int _isdigit(int c)
