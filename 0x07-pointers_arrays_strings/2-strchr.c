@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 
 /**
  * _strchr - Look for a byte through a string and returns a pointer to
