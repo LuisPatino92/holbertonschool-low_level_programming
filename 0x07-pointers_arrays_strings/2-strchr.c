@@ -1,5 +1,5 @@
 #include "holberton.h"
-
+#define NULL 0L
 /**
  * _strchr - Look for a byte through a string and returns a pointer to
  *
@@ -12,14 +12,12 @@
 char *_strchr(char *s, char c)
 {
 	int i;
-	void *null;
 
-	null = &null;
 	for (i = 0; *(s + i); i++)
 	{
 		if (*(s + i) == c)
 			return (s + i);
 	}
 
-	return (null);
+	return (NULL);
 }
