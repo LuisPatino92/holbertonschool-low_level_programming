@@ -12,7 +12,6 @@
 char *_strchr(char *s, char c)
 {
 	int i;
-	char *nullAux = 0;
 
 	for (i = 0; *(s + i) != 0; i++)
 	{
@@ -20,5 +19,5 @@ char *_strchr(char *s, char c)
 			return (s + i);
 	}
 
-	return (nullAux);
+	return (NULL);
 }
