@@ -1,0 +1,1 @@
+This folder contains the excersices from the 0x08 holberton's project!
