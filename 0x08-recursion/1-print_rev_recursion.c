@@ -28,12 +28,8 @@ void printrev(char *s, int i, int length)
 {
 	if (*(s + i) != '\0')
 	{
-		_putchar(*(s + length - i));
+		_putchar(*(s + length - i - 1));
 		(printrev(s, ++i, length));
-	}
-	else
-	{
-		_putchar(*(s + length - i));
 	}
 }
 
