@@ -1,0 +1,1 @@
+This folder has all the tasks coded in C for the 0x0A project
