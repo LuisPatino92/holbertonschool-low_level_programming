@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "holberton.h"
 
 /**
  * main - prints the name of the executable.
@@ -10,7 +9,7 @@
  * Return: Always 0 success
  */
 
-int main(int __attribute__((__unused__)) argc , char **argv)
+int main(int __attribute__((__unused__)) argc, char **argv)
 {
 	printf("%s\n", *argv);
 	return (0);
