@@ -11,7 +11,7 @@
 
 int main(int __attribute__((unused)) argc, char **argv)
 {
-	for (;*argv; argv++)
+	for ( ; *argv; argv++)
 		printf("%s\n", *argv);
 	return (0);
 }
