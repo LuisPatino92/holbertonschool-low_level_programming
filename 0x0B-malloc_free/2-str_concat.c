@@ -15,12 +15,6 @@ char *str_concat(char *s1, char *s2)
 	int i, j;
 	char *P, *S1, *S2;
 
-	if (s1 == NULL && s2 == NULL)
-	{
-		P = malloc(sizeof(char));
-		*P = '\0';
-		return (P);
-	}
 	if (s1 == NULL)
 	{
 		S1 = malloc(sizeof(char));
