@@ -1,0 +1,1 @@
+This folder has all the excersices in 0x0B project!
