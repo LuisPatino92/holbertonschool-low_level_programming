@@ -21,41 +21,32 @@ char *str_concat(char *s1, char *s2)
 		*P = '\0';
 		return (P);
 	}
-
 	if (s1 == NULL)
 	{
 		S1 = malloc(sizeof(char));
 		*S1 = '\0';
 	}
 	else
-	{
 		S1 = copy(s1);
-	}
-
 	if (s2 == NULL)
 	{
 		S2 = malloc(sizeof(char));
 		*S2 = '\0';
 	}
 	else
-	{
 		S2 = copy(s2);
-	}
-
 	if (malloc(length(S1)) == NULL || malloc(length(S2)) == NULL)
 		return (NULL);
 
-	P = malloc((length(S1) * sizeof(char)) + (length(S2) * sizeof(char)));
+	P = malloc(((length(S1) * sizeof(char)) + (length(S2) * sizeof(char))) + 1);
 
 	for (i = 0; i <= length(S1); i++)
 		*(P + i) = *(S1 + i);
 
 	for (j = 0; j <= length(S2); j++)
 		*(P + i + j - 1) = *(S2 + j);
-
 	free(S1);
 	free(S2);
-
 	return (P);
 }
 
@@ -90,7 +81,7 @@ char *copy(char *string)
 	char *P;
 	int i;
 
-	P = malloc(length(string) * sizeof(char));
+	P = malloc((length(string) * sizeof(char)) + 1);
 
 	for (i = 0; i <= length(string); i++)
 		*(P + i) = *(string + i);
