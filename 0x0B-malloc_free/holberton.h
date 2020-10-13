@@ -7,3 +7,4 @@ char *argstostr(int ac, char **av);
 char **strtow(char *str);
 int _putchar(char c);
 int length(char *str);
+char *copy(char *string);
