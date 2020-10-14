@@ -38,13 +38,15 @@ char *str_concat(char *s1, char *s2)
 	if (malloc(length(S1)) == NULL || malloc(length(S2)) == NULL)
 		return (NULL);
 
-	P = malloc(((length(S1) * sizeof(char)) + (length(S2) * sizeof(char))) + 1);
+	P = malloc((((length(S1) * sizeof(char)) + (length(S2) * sizeof(char))+1))); /*+1*/
 
 	for (i = 0; i <= length(S1); i++)
 		*(P + i) = *(S1 + i);
 
 	for (j = 0; j <= length(S2); j++)
 		*(P + i + j - 1) = *(S2 + j);
+
+	*(P + i + j - 1) = '\0'; /**/
 	free(S1);
 	free(S2);
 	return (P);
