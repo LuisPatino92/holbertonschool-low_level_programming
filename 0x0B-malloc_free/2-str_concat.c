@@ -35,10 +35,13 @@ char *str_concat(char *s1, char *s2)
 	}
 	else
 		S2 = copy(s2);
-	if (malloc(length(S1)) == NULL || malloc(length(S2)) == NULL)
-		return (NULL);
+
+	/*	if (malloc(length(S1)) == NULL || malloc(length(S2)) == NULL)
+		return (NULL);*/
 
 	P = malloc((length(S1) + length(S2) + 1) * sizeof(char));
+	if (P == NULL)
+		return (NULL);
 
 	for (i = 0; i <= length(S1); i++)
 		*(P + i) = *(S1 + i);
@@ -48,6 +51,7 @@ char *str_concat(char *s1, char *s2)
 
 	free(S1);
 	free(S2);
+
 	return (P);
 }
 
