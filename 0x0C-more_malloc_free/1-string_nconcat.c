@@ -19,7 +19,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int s2_contribution, i, j;
 
 	if (length(s2) >= n)
-		s2_contribution = n;
+		s2_contribution = n - 1;
 	else
 		s2_contribution = length(s2);
 
