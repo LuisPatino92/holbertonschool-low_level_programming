@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <string.h>
 #include <stdlib.h>
 
 /**
@@ -14,6 +13,7 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
+	unsigned int i;
 	void *P;
 
 	if (nmemb == 0 || size == 0)
@@ -24,8 +24,8 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (P == NULL)
 		free(P);
 
-	memset(P, 0, size);
-
+	for (i = 0; i < nmemb * size; i++)
+		*(char *)P = 0;
 	return (P);
 
 }
