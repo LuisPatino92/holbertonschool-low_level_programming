@@ -25,7 +25,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (s1 == NULL && s2 == NULL)
 	{
-		P = "";
+		P = malloc(1);
+		*(P) = '\0';
 		return (P);
 	}
 	else if (s1 == NULL)
