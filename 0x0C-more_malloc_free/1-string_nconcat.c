@@ -5,7 +5,7 @@
 unsigned int length(char *str);
 
 /**
- * str_concat - Concatenates 2 strings
+ * string_nconcat - Concatenates 2 strings
  *
  * @s1: First string
  * @s2: Second string
@@ -18,8 +18,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *P;
 	unsigned int s2_contribution, i, j;
 
-	if (length(s2) >= n)
-		s2_contribution = n;
+	if (length(s2) > n)
+		s2_contribution = n - 1;
 	else
 		s2_contribution = length(s2);
 
@@ -31,7 +31,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	else if (s1 == NULL)
 	{
-		P = (char *)malloc(s2_contribution + 1);
+		P = (char *)malloc((s2_contribution + 1) * sizeof(char));
 		if (P == NULL)
 		{
 			free(P);
@@ -44,7 +44,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	else if (s2 == NULL)
 	{
-		P = (char *)malloc(length(s1) + 1);
+		P = (char *)malloc((length(s1) + 1) * sizeof(char));
 		if (P == NULL)
 		{
 			free(P);
@@ -56,7 +56,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	else
 	{
-		P = (char *)malloc(length(s1) + s2_contribution + 1);
+		P = (char *)malloc((length(s1) + s2_contribution + 1) * sizeof(char));
 		if (P == NULL)
 		{
 			free(P);
