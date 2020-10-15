@@ -31,7 +31,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	else if (s1 == NULL)
 	{
-		P = (char *)malloc((s2_contribution) * sizeof(char));
+		P = (char *)malloc((s2_contribution + 1) * sizeof(char));
 		if (P == NULL)
 		{
 			free(P);
@@ -56,7 +56,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	else
 	{
-		P = (char *)malloc((length(s1) + s2_contribution) * sizeof(char));
+		P = (char *)malloc((length(s1) + s2_contribution + 1) * sizeof(char));
 		if (P == NULL)
 		{
 			free(P);
