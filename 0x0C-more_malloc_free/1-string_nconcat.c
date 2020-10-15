@@ -19,9 +19,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int s2_contribution, i, j;
 
 	if (length(s2) > n)
-		s2_contribution = n - 1;
+		s2_contribution = n;
 	else
-		s2_contribution = length(s2);
+		s2_contribution = length(s2) + 1;
 
 	if (s1 == NULL && s2 == NULL)
 	{
@@ -31,14 +31,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	else if (s1 == NULL)
 	{
-		P = (char *)malloc((s2_contribution + 1) * sizeof(char));
+		P = (char *)malloc((s2_contribution) * sizeof(char));
 		if (P == NULL)
 		{
 			free(P);
 			return (NULL);
 		}
 
-		for (i = 0; i <= s2_contribution; i++)
+		for (i = 0; i < s2_contribution; i++)
 			*(P + i) = *(s2 + i);
 		return (P);
 	}
@@ -56,7 +56,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	else
 	{
-		P = (char *)malloc((length(s1) + s2_contribution + 1) * sizeof(char));
+		P = (char *)malloc((length(s1) + s2_contribution) * sizeof(char));
 		if (P == NULL)
 		{
 			free(P);
@@ -64,7 +64,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		}
 		for (i = 0; i <= length(s1); i++)
 			*(P + i) = *(s1 + i);
-		for (j = 0; j <= s2_contribution; j++)
+		for (j = 0; j < s2_contribution; j++)
 			*(P + i + j - 1) = *(s2 + j);
 		return (P);
 	}
