@@ -8,24 +8,24 @@
  * @size: The size of every space
  *
  * Return: The address of the concatenated string
- *
  */
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	unsigned int i;
-	void *P;
+	void *P = NULL;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	P = (void *)malloc(nmemb * size);
+	P = malloc(nmemb * size * sizeof(char));
 
 	if (P == NULL)
-		free(P);
+		return (P);
 
 	for (i = 0; i < nmemb * size; i++)
 		*(char *)P = 0;
-	return (P);
+
+	return ((char *)P);
 
 }
