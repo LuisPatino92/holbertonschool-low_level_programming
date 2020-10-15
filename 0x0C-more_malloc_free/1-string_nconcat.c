@@ -21,7 +21,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (length(s2) >= n)
 		s2_contribution = n - 1;
 	else
-		s2_contribution = length(s2) - 1;
+		s2_contribution = length(s2);
 
 	if (s1 == NULL && s2 == NULL)
 	{
@@ -51,7 +51,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			return (NULL);
 		}
 		for (i = 0; i <= length(s1); i++)
-			*(P + i) = *(s2 + i);
+			*(P + i) = *(s1 + i);
 		return (P);
 	}
 	else
