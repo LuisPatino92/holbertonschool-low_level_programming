@@ -1,7 +1,5 @@
 #include "holberton.h"
 
-void rot_13(char *letter);
-
 /**
  * rot13 - encrypt a message with rot13 rules
  *
@@ -12,26 +10,22 @@ void rot_13(char *letter);
 
 char *rot13(char *msg)
 {
-	int i;
+	int i, j, change[] = {13, 13, -13, -13};
+	char liminf[] = {97, 65, 110, 78};
+	char limsup[] = {109, 77, 122, 90};
 
 	for (i = 0; *(msg + i) != '\0'; i++)
-		rot_13(msg + i);
+	{
+		for (j = 0; j < 4; j++)
+		{
+			if ((msg[i] >= liminf[j]) && (msg[i] <= limsup[j]))
+			{
+				msg[i] = msg[i] + change[j];
+				break;
+
+			}
+		}
+	}
 
 	return (msg);
-}
-
-/**
- * rot_13 - Encrypts a letter to ROT13
- *
- * @letter: The letter to be encrypted
- */
-
-void rot_13(char *letter)
-{
-	if ((*(letter) >= 97 && *(letter) <= 109) ||
-	    (*(letter) >= 65 && *(letter) <= 77))
-		*(letter) = *(letter) + 13;
-	else if ((*(letter) >= 110 && *(letter) <= 122) ||
-		 (*(letter) >= 78 && *(letter) <= 90))
-		*(letter) = *(letter) - 13;
 }
