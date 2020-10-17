@@ -1,7 +1,9 @@
 #include "holberton.h"
 
+void rot_13(char *letter);
+
 /**
- * leet - encrypt a message witha given rules
+ * rot13 - encrypt a message with rot13 rules
  *
  * @msg: The addres of message to be encrypted
  *
@@ -10,25 +12,26 @@
 
 char *rot13(char *msg)
 {
-	int i, j;
-	char ToCode[] = {97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, \
-108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, \
-65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, \
-84, 85, 86, 87, 88, 89, 90};
+	int i;
 
-	char coded[] = {110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, \
-121, 122, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 78, \
-79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 65, 66, 67, 68, 69, 70, 71, \
-72, 73, 74, 75, 76, 77};
-
-	for (i = 0; i <= 51; i++)
-	{
-		for (j = 0; *(msg + j); j++)
-		{
-			if (*(msg + j) == *(ToCode + i))
-				*(msg + j) = *(coded + i);
-		}
-	}
+	for (i = 0; *(msg + i) != '\0'; i++)
+		rot_13(msg + i);
 
 	return (msg);
+}
+
+/**
+ * rot_13 - Encrypts a letter to ROT13
+ *
+ * @letter: The letter to be encrypted
+ */
+
+void rot_13(char *letter)
+{
+	if ((*(letter) >= 97 && *(letter) <= 109) ||
+	    (*(letter) >= 65 && *(letter) <= 77))
+		*(letter) = *(letter) + 13;
+	else if ((*(letter) >= 110 && *(letter) <= 122) ||
+		 (*(letter) >= 78 && *(letter) <= 90))
+		*(letter) = *(letter) - 13;
 }
