@@ -11,7 +11,7 @@ char *cap_string(char *toUP)
 {
 
 	int i, j;
-
+	char spaces[] = {32, 9, , 10, 44, 59, 46, 33, 63, 34, 40, 41, };
 
 	for (i = 0; *(toUP + i); i++)
 	{
