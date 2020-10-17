@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 int rec_intPrint(int n, int i);
 
@@ -13,14 +14,12 @@ void print_number(int n)
 
 	if (n < 0)
 	{
-		n = -n;
 		_putchar(45);
 	}
 	else if (n == 0)
 	{
 		_putchar(48);
 	}
-
 	rec_intPrint(n, 1);
 }
 
@@ -37,9 +36,22 @@ int rec_intPrint(int n, int i)
 	if (n / i == 0)
 		return (0);
 
+	if (i == 1000000000)
+	{
+		if (n < 0)
+			_putchar((-1 * ((n / i) % 10)) + 48);
+		else
+			_putchar(((n / i) % 10) + 48);
+
+		return (0);
+	}
 	rec_intPrint(n, i * 10);
 
-	_putchar(((n / i) % 10) + 48);
+	if (n < 0)
+		_putchar((-1 * ((n / i) % 10)) + 48);
+	else
+		_putchar(((n / i) % 10) + 48);
+
 
 	return (0);
 }
