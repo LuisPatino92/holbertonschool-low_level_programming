@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 /**
  * print_name - Prints the name passed as argument in UPPERCASE or not
  *
@@ -8,5 +10,8 @@
 
 void print_name(char *name, void (*f)(char *))
 {
-	f(name);
+	if (name != NULL)
+	{
+		f(name);
+	}
 }
