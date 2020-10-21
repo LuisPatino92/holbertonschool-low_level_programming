@@ -1,0 +1,1 @@
+This directory has all the tasks on 0x0F project!
