@@ -17,34 +17,30 @@ int length(char *string);
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *dog;
-	char *name_copy, *owner_copy;
 
 	dog = malloc(sizeof(dog_t));
-
 	if (dog == NULL)
 		return (NULL);
 
-	dog->name = name;
+	dog->name = malloc(length(name) + 1);
+	if (dog->name == NULL)
+	{
+		free(dog);
+		return (NULL);
+	}
+
 	dog->age = age;
-	dog->owner = owner;
 
-	name_copy = malloc(length(name) + 1);
-	if (name_copy == NULL)
+	dog->owner = malloc(length(owner) + 1);
+	if (dog->owner == NULL)
 	{
 		free(dog);
-		return (NULL);
-	}
-	owner_copy = malloc(length(owner) + 1);
-	if (owner_copy == NULL)
-	{
-		free(dog);
-		free(name_copy);
+		free(dog->owner);
 		return (NULL);
 	}
 
-
-	copy_S(name, name_copy);
-	copy_S(owner, owner_copy);
+	copy_S(name, dog->name);
+	copy_S(owner, dog->owner);
 
 	return (dog);
 
