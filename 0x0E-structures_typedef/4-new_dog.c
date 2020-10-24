@@ -29,14 +29,19 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog->owner = owner;
 
 	name_copy = malloc(sizeof(*name) + 1);
+	if (name_copy == NULL)
+	{
+		free(dog);
+		return (NULL);
+	}
 	owner_copy = malloc(sizeof(*owner) + 1);
-
-	if (name_copy == NULL || owner_copy == NULL)
+	if (owner_copy == NULL)
 	{
 		free(dog);
 		free(name_copy);
-		return(NULL);
+		return (NULL);
 	}
+
 
 	copy_S(name, name_copy);
 	copy_S(owner, owner_copy);
