@@ -17,7 +17,11 @@ void print_all(const char * const format, ...)
 	va_list ToPrint;
 
 	va_start(ToPrint, format);
-
+	if (total == 0)
+	{
+		printf("\n");
+		return;
+	}
 	while (*(format + i))
 	{
 		switch (*(format + i))
@@ -42,13 +46,13 @@ void print_all(const char * const format, ...)
 				R = 'n';
 				break;
 		}
-		if (count < total &&  R == 'R')
+		if (count < total && R == 'R')
 			printf(", ");
-		if (count == total)
-			printf("\n");
+
 		R = 'R';
 		i++;
 	}
+	printf("\n");
 	va_end(ToPrint);
 }
 
