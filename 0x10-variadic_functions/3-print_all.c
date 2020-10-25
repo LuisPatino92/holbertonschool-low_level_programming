@@ -36,7 +36,7 @@ void print_all(const char * const format, ...)
 				break;
 			case 's':
 				aux = va_arg(ToPrint, char*);
-				if (aux == NULL)
+				if (aux == NULL || aux[0] == '\0')
 				{
 					printf("(nil)");
 					count++;
