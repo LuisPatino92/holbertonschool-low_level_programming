@@ -35,7 +35,7 @@ void print_all(const char * const format, ...)
 				count++;
 				break;
 			case 'f':
-				printf("%g", va_arg(ToPrint, double));
+				printf("%f", va_arg(ToPrint, double));
 				count++;
 				break;
 			case 's':
