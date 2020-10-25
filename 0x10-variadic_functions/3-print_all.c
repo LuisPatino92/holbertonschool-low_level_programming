@@ -13,15 +13,11 @@ int counter(const char * const guide);
 void print_all(const char * const format, ...)
 {
 	int i = 0, count = 0, total = counter(format);
-	char R = 'R';
+	char R = 'R', *aux;
 	va_list ToPrint;
 
 	va_start(ToPrint, format);
-	if (total == 0)
-	{
-		printf("\n");
-		return;
-	}
+
 	while (*(format + i))
 	{
 		switch (*(format + i))
@@ -39,7 +35,14 @@ void print_all(const char * const format, ...)
 				count++;
 				break;
 			case 's':
-				printf("%s", va_arg(ToPrint, char*));
+				aux = va_arg(ToPrint, char*);
+				if (aux == NULL)
+				{
+					printf("(nil)");
+					count++;
+					break;
+				}
+				printf("%s", aux);
 				count++;
 				break;
 			default:
