@@ -17,7 +17,8 @@ void print_all(const char * const format, ...)
 	va_list ToPrint;
 
 	va_start(ToPrint, format);
-
+	if (format == NULL)
+		return;
 	while (*(format + i))
 	{
 		switch (*(format + i))
@@ -36,7 +37,7 @@ void print_all(const char * const format, ...)
 				break;
 			case 's':
 				aux = va_arg(ToPrint, char*);
-				if (aux == NULL || aux[0] == '\0')
+				if (aux == NULL)
 				{
 					printf("(nil)");
 					count++;
