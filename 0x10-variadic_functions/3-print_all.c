@@ -17,14 +17,12 @@ void print_all(const char * const format, ...)
 	va_list ToPrint;
 
 	va_start(ToPrint, format);
-	if (format == NULL)
-		return;
 	while (*(format + i))
 	{
 		switch (*(format + i))
 		{
 			case 'c':
-				printf("%c", va_arg(ToPrint, int));
+				printf("%c", (char)va_arg(ToPrint, int));
 				count++;
 				break;
 			case 'i':
@@ -52,7 +50,6 @@ void print_all(const char * const format, ...)
 		}
 		if (count < total && R == 'R')
 			printf(", ");
-
 		R = 'R';
 		i++;
 	}
