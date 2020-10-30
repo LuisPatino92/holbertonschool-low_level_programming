@@ -15,11 +15,14 @@ void free_list(list_t *head)
 
 	for (i = 0; h != NULL; i++)
 	{
-		free(aux);
 		free(h->str);
-		aux = h;
 		h = h->next;
 	}
 
-
+	for (i = 0; h != NULL; i++)
+	{
+		free(aux);
+		h = h->next;
+		aux = h;
+	}
 }
