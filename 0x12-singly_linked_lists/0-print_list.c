@@ -5,7 +5,7 @@
  *
  * @h: The list to be printed
  *
- * Returns: The number of nodes printed
+ * Return: The number of nodes printed
  */
 
 size_t print_list(const list_t *h)
