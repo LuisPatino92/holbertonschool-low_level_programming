@@ -13,35 +13,57 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int lengthH, lengthN, i, aux = 0, index[300];
+	int i, found = 0;
 
-	for (lengthH = 0; *(haystack + lengthH); lengthH++)
-		;
-	for (lengthN = 0; *(needle + lengthN); lengthN++)
-		;
-	printf("De los lentgs salimos melos \n\n");
+	if (haystack == NULL || needle == NULL ||
+		*haystack == '\0' || needle == '\0')
+		return (NULL);
 
-	puts(haystack);
-	puts(needle);
-
-	for (i = 0; haystack[i] != '\0'; i++)
+	for (i = 0; length(haystack + i) >= length(needle); i++)
 	{
-		putchar(haystack[i]);
-
-		/*	if (*(haystack + i) == *(needle + 1))
-		{
-
-	       
-			index[aux] = i;
-			aux++;
-			}*/
+		found = compare(needle, haystack + i);
+		if (found == 1)
+			return (haystack + i);
 	}
-	printf("del segundo salimos");
 
+	return (NULL);
+}
 
-	for (i = 0; index[i]; i++)
+/**
+ * compare - compares two strings one short and one large
+ *
+ * @shorty: The short string
+ * @large: The large string
+ *
+ * Return: 0 if differents, 1 if match
+ */
+int compare(char *shorty, char *large)
+{
+	int i;
+
+	for (i = 0; i < length(shorty); i++)
 	{
-		printf("the index are %d y %d", index[0], index[1]);
+		if (*(shorty + i) != *(large + i))
+			return (0);
 	}
-	return (0);
+
+	return (1);
+}
+
+/**
+ * length - Measure the length of a string
+ *
+ * @str: The string whose length is needed
+ *
+ * Return: The length of the string
+ */
+
+int length(char *str)
+{
+	int i;
+
+	for (i = 0; *(str + i); i++)
+		;
+
+	return (i);
 }
