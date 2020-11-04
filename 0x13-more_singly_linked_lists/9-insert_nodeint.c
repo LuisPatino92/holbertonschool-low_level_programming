@@ -1,5 +1,7 @@
 #include "lists.h"
 
+unsigned int listint_len2(const listint_t *h);
+
 /**
  * insert_nodeint_at_index - Insert a new node in a desired index
  *
@@ -15,27 +17,52 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	unsigned int i;
 	listint_t *current = *head, *new_node = NULL;
 
-	for (i = 0; current != NULL || idx == 0; i++)
+	if (idx > listint_len2(*head))
+		return (NULL);
+
+	for (i = 0; i < listint_len2(*head) || idx == 0; i++)
 	{
 		if (i + 1 == idx || idx == 0)
 		{
 			new_node = malloc(sizeof(listint_t));
 			if (new_node == NULL)
 				return (NULL);
+
 			new_node->n = n;
+
 			if (idx == 0)
 			{
-				*head = new_node;
-				new_node->next = *head;
+				new_node->next = current;
+				current = new_node;
 			}
 			else
 			{
 				new_node->next = current->next;
 				current->next = new_node;
 			}
-			return (new_node);
+
 		}
 		current = current->next;
 	}
 	return (NULL);
+}
+
+#include "lists.h"
+
+/**
+ * listint_len2 - Counts the elements of a linked list
+ *
+ * @h: The linked list to be printed
+ *
+ * Return: The number of elements printed
+ */
+
+unsigned int listint_len2(const listint_t *h)
+{
+	unsigned int i = 0;
+
+	for (i = 0; h != NULL; i++)
+		h = h->next;
+
+	return (i);
 }
