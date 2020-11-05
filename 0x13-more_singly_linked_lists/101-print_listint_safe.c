@@ -11,7 +11,10 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t i = 0, j;
-	const listint_t *aux, *hash_map[20];
+	const listint_t *aux, *hash_map[40];
+
+	if (head == NULL)
+		exit(98);
 
 	aux = head;
 
