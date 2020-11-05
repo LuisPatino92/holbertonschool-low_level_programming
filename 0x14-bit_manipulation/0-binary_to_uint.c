@@ -16,7 +16,7 @@ unsigned int binary_to_uint(const char *b)
 
 	for (i = 0, j = length(b) - 1; i < length(b); i++, j--)
 	{
-		if (*(b + j) < 48 || *(b + j) > 49)
+		if (*(b + j) < 48 || *(b + j) > 49 || b == NULL)
 			return (0);
 		aux = aux | ((*(b + j) - 48) << i);
 	}
