@@ -14,10 +14,10 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int aux = 0;
 	int i, j;
 
-	if(b == NULL || length(b) > 32)
+	if (b == NULL)
 		return (0);
 
-	for (i = 0, j = length(b) - 1; i < length(b); i++, j--)
+	for (i = 0, j = length(b) - 1; i < length(b) && i < 32; i++, j--)
 	{
 		if (*(b + j) < 48 || *(b + j) > 49)
 			return (0);
