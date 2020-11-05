@@ -3,7 +3,7 @@
 int get_bit2(unsigned long int n, unsigned int index);
 
 /**
- * set_bit - Sets a bit of a number to 1
+ * clear_bit - Sets a bit of a number to 0
  *
  * @n: The number whose bit is gonna be set in 0
  * @index: The index to check
