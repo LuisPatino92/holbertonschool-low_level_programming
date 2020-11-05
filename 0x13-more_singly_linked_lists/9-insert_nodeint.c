@@ -17,7 +17,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	unsigned int i;
 	listint_t *current = *head, *new_node = NULL;
 
-	if (idx > listint_len2(*head))
+	if (idx >= listint_len2(*head))
 		return (NULL);
 
 	for (i = 0; i < listint_len2(*head); i++, current = current->next)
