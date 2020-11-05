@@ -8,10 +8,10 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int aux = 2147483648;
+	unsigned long int aux = 4611686018427387904;
 	int start_flag = 0, i;
 
-	for (i = 32; i > 0; i--)
+	for (i = 63; i > 0; i--)
 	{
 		if (((aux & n) == aux) && start_flag == 0)
 			start_flag = 1;
