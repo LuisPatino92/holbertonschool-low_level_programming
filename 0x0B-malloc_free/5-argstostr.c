@@ -21,18 +21,14 @@ char *argstostr(int ac, char **av)
 	for (i = 1; i < ac; i++)
 		sum += length(*(av + i));
 
-	concatenated = malloc((sum + 1) * (sizeof(char)));
-
+	concatenated = malloc((sum + ac) * (sizeof(char)));
 	if (concatenated == NULL)
 		return (NULL);
 
 	for (i = 1; i < ac; i++)
 	{
-		for (j = 0; *(*(av + i) + j) != '\0'; j++)
-		{
+		for (j = 0; *(*(av + i) + j) != '\0'; j++, k++)
 			*(concatenated + k) = *(*(av + i) + j);
-			k++;
-		}
 		*(concatenated + k) = '\n';
 		k++;
 	}
@@ -51,9 +47,9 @@ char *argstostr(int ac, char **av)
 
 int length(char *str)
 {
-	if (*(str) == '\0')
-		return (1);
-	else
-		return (1 + length(str + 1));
+	int i = 0;
 
+	for (; *(str + i); i++)
+		;
+	return (i);
 }
