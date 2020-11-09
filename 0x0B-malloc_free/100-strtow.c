@@ -17,7 +17,8 @@ char **strtow(char *str)
 	char **words = NULL;
 	int count = 0, i;
 
-	if (str == NULL || *(str) == '\0')
+	if (str == NULL || *(str) == '\0' ||
+	(*(str) == 32 && *(str + 1) == 0))
 		return (NULL);
 
 	for (i = 0; *(str + i); i++)
