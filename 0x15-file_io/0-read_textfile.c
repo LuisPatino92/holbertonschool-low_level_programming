@@ -30,11 +30,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (chars_readed == -1)
 		return (0);
 
-	chars_written = write(STDOUT_FILENO, buffer, letters);
+	chars_written = write(STDOUT_FILENO, buffer, (size_t)chars_readed);
 	if (chars_written == -1)
 		return (0);
 
 	free(buffer);
 	close(fd);
-	return (chars_written < chars_readed ? chars_written : chars_readed);
+
+	if (chars_written == chars_readed)
+		return (chars_written < chars_readed ? chars_written : chars_readed);
+	return (0);
 }
