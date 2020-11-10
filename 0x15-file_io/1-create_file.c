@@ -25,8 +25,6 @@ int create_file(const char *filename, char *text_content)
 
 	if (text_content != NULL)
 		written = write(fd, text_content, length(text_content));
-	else
-		written = write(fd, "", 0);
 
 	if (written == -1)
 	{
@@ -50,7 +48,8 @@ int create_file(const char *filename, char *text_content)
 int length(char *str)
 {
 	int i;
-
+	if (str == NULL)
+		return (0);
 	for (i = 0; *(str + i); i++)
 		;
 
