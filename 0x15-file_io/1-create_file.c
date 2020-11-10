@@ -48,6 +48,7 @@ int create_file(const char *filename, char *text_content)
 int length(char *str)
 {
 	int i;
+
 	if (str == NULL)
 		return (0);
 	for (i = 0; *(str + i); i++)
