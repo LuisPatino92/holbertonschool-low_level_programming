@@ -33,5 +33,6 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
 dlistint_t *create_node2(void);
 dlistint_t *create_node3(void);
 dlistint_t *create_node7(void);
+size_t dlistint_len2(const dlistint_t *h);
 
 #endif /*LISTS_H*/
