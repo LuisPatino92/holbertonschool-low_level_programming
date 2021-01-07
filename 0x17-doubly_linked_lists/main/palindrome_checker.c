@@ -25,7 +25,7 @@ int main(void)
 			}
 		}
 	}
-	printf("\nHay %d Palindromos y el mayor es %d", mayor, amount / 2);
+	printf("\nHay %d Palindromos y el mayor es %d", amount / 2 , mayor);
 	return (0);
 }
 
