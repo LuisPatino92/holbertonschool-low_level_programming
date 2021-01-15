@@ -59,9 +59,60 @@ hash_node_t *create_node(const char *key, const char *value)
 	if (new_node == NULL)
 		return (NULL);
 
-	new_node->key = (char *)key;
-	new_node->value = (char *)value;
+	new_node->key = malloc(sizeof(char) * length((key)));
+	if (new_node->key == NULL)
+	{
+		free(new_node);
+		return (NULL);
+	}
+
+	new_node->value = malloc(sizeof(char) * length((value)));
+	if (new_node->key == NULL)
+	{
+		free(new_node->key);
+		free(new_node);
+		return (NULL);
+	}
+	copy_str(key, new_node->key);
+	copy_str(value, new_node->value);
+
 	new_node->next = NULL;
 
 	return (new_node);
+}
+
+/**
+ * length - Computes the length of a string
+ *
+ * @str: The string whose length is desired.
+ *
+ * Return: The length of the string
+ */
+
+int length(const char *str)
+{
+	int i = 0;
+
+	while (*(str + i))
+		i++;
+	return (i);
+}
+
+/**
+ * copy_str - Copies a string from one to another memory address.
+ *
+ * @original: The original string
+ * @copy: the address where you want the copy
+ */
+
+void copy_str(const char *original, char *copy)
+{
+	int i = 0;
+
+	while (*(original + i))
+	{
+		*(copy + i) = *(original + i);
+		i++;
+	}
+	*(copy + i) = 0;
 }
