@@ -32,11 +32,27 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 int add_node(hash_node_t **head, const char *key, const char *value)
 {
-	hash_node_t *new_node = NULL;
+	hash_node_t *new_node = NULL, *tmp = NULL, *aux = NULL;
+	int i = 0;
 
 	new_node = create_node(key, value);
 	if (new_node == NULL)
 		return (0);
+	tmp = *head;
+	aux = tmp;
+	while (tmp)
+	{
+		if (!strcmp(tmp->key, key))
+		{
+			if (i == 0)
+				*head = (*head)->next;
+			else
+				aux->next = tmp->next;
+		}
+		aux = tmp;
+		tmp = tmp->next;
+		i++;
+	}
 	new_node->next = *head;
 	*head = new_node;
 	return (1);
