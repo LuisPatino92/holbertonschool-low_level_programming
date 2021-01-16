@@ -46,6 +46,7 @@ int length(const char *str);
 void copy_str(const char *original, char *copy);
 
 char *hash_table_get(const hash_table_t *ht, const char *key);
+void hash_table_print(const hash_table_t *ht);
 
 
 
