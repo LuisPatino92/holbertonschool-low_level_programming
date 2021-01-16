@@ -45,6 +45,8 @@ hash_node_t *create_node(const char *key, const char *value);
 int length(const char *str);
 void copy_str(const char *original, char *copy);
 
+char *hash_table_get(const hash_table_t *ht, const char *key);
+
 
 
 #endif /* HASH */
