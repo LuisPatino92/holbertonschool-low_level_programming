@@ -51,6 +51,10 @@ int add_node(hash_node_t **head, const char *key, const char *value)
 				*head = (*head)->next;
 			else
 				aux->next = tmp->next;
+			free(tmp->key);
+			free(tmp->value);
+			free(tmp);
+			break;
 		}
 		aux = tmp;
 		tmp = tmp->next;
