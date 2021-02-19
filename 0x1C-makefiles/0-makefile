@@ -1,0 +1,3 @@
+#Compile all the .c files to obtain an executable named holberton
+all:
+	gcc -o holberton *.c
