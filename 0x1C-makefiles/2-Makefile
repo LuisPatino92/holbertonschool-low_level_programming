@@ -5,15 +5,5 @@ NAME = holberton
 
 #Compile all the .c files to obtain an executable named holberton
 
-all: $(NAME)
-
-
-$(NAME): $(OBJ)
-	$(CC) $(OBJ) -o holberton
-
-main.o: main.c
-	$(CC) -c -o main.o main.c
-
-holberton.o: holberton.c
-	$(CC) -c -o holberton.o holberton.c
-
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME) 
