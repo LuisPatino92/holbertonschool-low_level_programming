@@ -1,0 +1,25 @@
+#Variables, intended for easy changes
+CC = gcc
+SRC = main.c holberton.c
+OBJ = $(SRC:.c=.o)
+NAME = holberton
+RM = rm
+
+#Compile all the .c files to obtain .o files, then an executable named as NAME
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+#Deletes erditors temporary files
+clean:
+	$(RM) ~*
+
+#Deletes object files (.o)
+oclean:
+	$(RM) $(OBJ) $(NAME)
+
+#Full Clean (Temporary, Objecs and Binary)
+fclean:
+	clean
+	oclean
+
+#Forces the recompilation of all source files
