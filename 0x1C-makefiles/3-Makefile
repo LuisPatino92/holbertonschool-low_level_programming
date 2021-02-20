@@ -3,7 +3,7 @@ CC = gcc
 SRC = main.c holberton.c
 OBJ = $(SRC:.c=.o)
 NAME = holberton
-RM = rm
+RM = rm -f
 
 #Compile all the .c files to obtain .o files, then an executable named as NAME
 all: $(OBJ)
@@ -11,11 +11,11 @@ all: $(OBJ)
 
 #Deletes erditors temporary files
 clean:
-	-$(RM) -f ~*
+	-$(RM) *~
 
 #Deletes object files (.o)
 oclean:
-	-$(RM) -f $(OBJ) $(NAME)
+	-$(RM) $(OBJ) $(NAME)
 
 #Full Clean (Temporary, Objecs and Binary)
 fclean:
