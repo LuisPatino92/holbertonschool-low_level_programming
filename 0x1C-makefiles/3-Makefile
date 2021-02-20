@@ -6,22 +6,19 @@ NAME = holberton
 RM = rm -f
 
 #Compile all the .c files to obtain .o files, then an executable named as NAME
-all: re
-
-#Deletes erditors temporary files
-clean:
-	-$(RM) *~ $(NAME)
-
-#Deletes object files (.o)
-oclean: $(OBJ)
-	-$(RM) $(OBJ)
-
-#Full Clean (Temporary, Objecs and Binary)
-fclean:
-	-$(RM) *~ $(NAME)
-	-$(RM) $(OBJ)
-
-#Forces the recompilation of all source files
-re:
-	$(CC) -c $(SRC)
+all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
+
+#Delete temporal (from editors) and binary files
+clean:
+	$(RM) *~ $(NAME)
+
+#Deletes all the .o files
+oclean:
+	$(RM) $(OBJ)
+
+#Deletes every file .o, Binary or temporal
+fclean: clean oclean
+
+#Forces the recompilation of all the source code
+re: oclean all
