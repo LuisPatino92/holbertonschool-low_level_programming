@@ -1,0 +1,9 @@
+CC = gcc
+SRC = main.c holberton.c
+
+#Compile all the .c files to obtain an executable named holberton
+
+all: holberton
+
+holberton: main.c holberton.c
+	$(CC) $(SRC) -o holberton
