@@ -11,11 +11,11 @@ all: $(OBJ)
 
 #Deletes erditors temporary files
 clean:
-	-$(RM) *~
+	-$(RM) *~ $(NAME)
 
 #Deletes object files (.o)
 oclean:
-	-$(RM) $(OBJ) $(NAME)
+	-$(RM) $(OBJ)
 
 #Full Clean (Temporary, Objecs and Binary)
 fclean:
