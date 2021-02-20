@@ -14,15 +14,15 @@ clean:
 	-$(RM) *~ $(NAME)
 
 #Deletes object files (.o)
-oclean:
+oclean: $(OBJ)
 	-$(RM) $(OBJ)
 
 #Full Clean (Temporary, Objecs and Binary)
 fclean:
-	clean
-	oclean
+	$(clean)
+	$(oclean)
 
 #Forces the recompilation of all source files
 re:
-	fclean
-	all
+	$(fclean)
+	$(all)
