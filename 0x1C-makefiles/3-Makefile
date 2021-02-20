@@ -18,7 +18,7 @@ oclean: $(OBJ)
 	-$(RM) $(OBJ)
 
 #Full Clean (Temporary, Objecs and Binary)
-fclean:
+fclean: $(OBJ)
 	-$(RM) $(OBJ) *~ $(NAME)
 
 #Forces the recompilation of all source files
