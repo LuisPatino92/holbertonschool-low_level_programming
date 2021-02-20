@@ -1,3 +1,6 @@
 #Compile all the .c files to obtain an executable named holberton
+
+all: holberton
+
 holberton: main.c holberton.c
 	gcc main.c holberton.c -o holberton
