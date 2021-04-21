@@ -16,7 +16,8 @@ int jump_search(int *array, size_t size, int value)
 
 	if (!array)
 		return (-1);
-
+	if (check_coincidence_at_0(*array, step, value) == 1)
+		return (0);
 	while (left_i < (int)size)
 	{
 		left_v = *(array + left_i);
@@ -48,4 +49,26 @@ int jump_search(int *array, size_t size, int value)
 			return (left_i + i);
 	}
 	return (-1);
+}
+
+
+/**
+ * check_coincidence_at_0 - Auxiliar function to handle edge case
+ *
+ * @array: The array to search in.
+ * @step: The step of the jump.
+ * @value: The value to search for.
+ *
+ * Return: The first index where value was found
+ */
+
+int check_coincidence_at_0(int val_array, int step, int value)
+{
+	if (val_array == value)
+	{
+		printf("Value found between indexes [0] and [%d]\n", step);
+		printf("Value checked array[0] = [%d]\n", val_array);
+		return (1);
+	}
+	return (0);
 }
