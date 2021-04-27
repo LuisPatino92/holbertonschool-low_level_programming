@@ -1,146 +1,89 @@
-# Holberton School Project
+# 0x1E. C - Search Algorithms
 
->This repo is part of the Holberton School curriculum.
+## Resources:books:
+Read or watch:
+* [Search algorithm](https://intranet.hbtn.io/rltoken/ntNFhA9urmBxZfcn8gjsqw)
+* [Space complexity (1)](https://intranet.hbtn.io/rltoken/pPScxisIQ0eOPBPXkjcEmg)
 
-## C - Search Algorithms
+---
+## Learning Objectives:bulb:
+What you should learn from this project:
 
-First touch with linear, binary, jump, interpolation, exponential, advanced binary and others searching algorithms.
-
-Some files are just text answers to questions about Space and Time complexity of the diferent algorithms.
+* What is a search algorithm
+* What is a linear search
+* What is a binary search
+* What is the best search algorithm to use depending on your needs
 
 ---
 
-## In this REPO:
+### [0. Linear search](./0-linear.c)
+* Write a function that searches for a value in an array of integers using the Linear search algorithm
 
->**[0-linear.c](0-linear.c)**
 
-Function that searches for a value in an array of integers using the Linear search algorithm.
+### [1. Binary search](./1-binary.c)
+* Write a function that searches for a value in a sorted array of integers using the Binary search algorithm
 
-- Prototype : `int linear_search(int *array, size_t size, int value);`.
-- Where `array` is a pointer to the first element of the array to search in.
-- `size` is the number of elements in array.
-- And `value` is the value to search for.
 
-The function returns the first index where value is located If value is not present in array or if array is `NULL`, the function  returns -1.
+### [2. Big O #0](./2-O)
+* What is the time complexity (worst case) of a linear search in an array of size n?
 
-Here, an example of how the function works:
 
-    Lucho@0x1E-search_algorithms$ cat 0-main.c
-    #include <stdio.h>
-    #include <stdlib.h>
-    #include "search_algos.h"
+### [3. Big O #1](./3-O)
+* What is the space complexity (worst case) of an iterative linear search algorithm in an array of size n?
 
-    /**
-     * main - Entry point
-     *
-     * Return: Always EXIT_SUCCESS
-     */
-    int main(void)
-    {
-        int array[] = {
-            10, 1, 42, 3, 4, 42, 6, 7, -1, 9
-        };
-        size_t size = sizeof(array) / sizeof(array[0]);
 
-        printf("Found %d at index: %d\n\n", 3, linear_search(array, size, 3));
-        printf("Found %d at index: %d\n\n", 42, linear_search(array, size, 42));
-        printf("Found %d at index: %d\n", 999, linear_search(array, size, 999));
-        return (EXIT_SUCCESS);
-    }
-    Lucho@0x1E-search_algorithms$ gcc -Wall -Wextra -Werror -pedantic 0-main.c 0-linear.c -o 0-linear
-    Lucho@0x1E-search_algorithms$ ./0-linear
-    Value checked array[0] = [10]
-    Value checked array[1] = [1]
-    Value checked array[2] = [42]
-    Value checked array[3] = [3]
-    Found 3 at index: 3
+### [4. Big O #2](./4-O)
+* What is the time complexity (worst case) of a binary search in an array of size n?
 
-    Value checked array[0] = [10]
-    Value checked array[1] = [1]
-    Value checked array[2] = [42]
-    Found 42 at index: 2
 
-    Value checked array[0] = [10]
-    Value checked array[1] = [1]
-    Value checked array[2] = [42]
-    Value checked array[3] = [3]
-    Value checked array[4] = [4]
-    Value checked array[5] = [42]
-    Value checked array[6] = [6]
-    Value checked array[7] = [7]
-    Value checked array[8] = [-1]
-    Value checked array[9] = [9]
-    Found 999 at index: -1
+### [5. Big O #3](./5-O)
+* What is the space complexity (worst case) of a binary search in an array of size n?
 
----
 
->**[1-binary.c](1-binary.c)**
+### [6. Big O #4](./6-O)
+* What is the space complexity of this function / algorithm?
 
-Function that searches for a value in a sorted array of integers using the Binary search algorithm.
 
-- Prototype : `int binary_search(int *array, size_t size, int value);`.
-- Where `array` is a pointer to the first element of the array to search in.
-- `size` is the number of elements in array.
-- And `value` is the value to search for.
-- `array` has to be sorted.
+### [7. Jump search](./100-jump.c)
+* Write a function that searches for a value in a sorted array of integers using the Jump search algorithm
 
-The function returns the index where value is located If value is not present in array or if array is `NULL`, the function  returns -1.
 
-Here, an example of how the function works:
+### [8. Big O #5](./101-O)
+* What is the time complexity (average case) of a jump search in an array of size n, using step = sqrt(n)?
 
-    Lucho@0x1E-search_algorithms$ cat 1-main.c
-    #include <stdio.h>
-    #include <stdlib.h>
-    #include "search_algos.h"
 
-    /**
-     * main - Entry point
-     *
-     * Return: Always EXIT_SUCCESS
-     */
-    int main(void)
-    {
-        int array[] = {
-            0, 1, 2, 3, 4, 5, 6, 7, 8, 9
-        };
-        size_t size = sizeof(array) / sizeof(array[0]);
+### [9. Interpolation search](./102-interpolation.c)
+* Write a function that searches for a value in a sorted array of integers using the Interpolation search algorithm
 
-        printf("Found %d at index: %d\n\n", 2, binary_search(array, size, 2));
-        printf("Found %d at index: %d\n\n", 5, binary_search(array, 5, 5));
-        printf("Found %d at index: %d\n", 999, binary_search(array, size, 999));
-        return (EXIT_SUCCESS);
-    }
-    Lucho@0x1E-search_algorithms$ gcc -Wall -Wextra -Werror -pedantic 1-main.c 1-binary.c -o 1-binary
-    Lucho@0x1E-search_algorithms$ ./1-binary
-    Searching in array: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
-    Searching in array: 0, 1, 2, 3
-    Searching in array: 2, 3
-    Found 2 at index: 2
 
-    Searching in array: 0, 1, 2, 3, 4
-    Searching in array: 3, 4
-    Searching in array: 4
-    Found 5 at index: -1
+### [10. Exponential search](./103-exponential.c)
+* Write a function that searches for a value in a sorted array of integers using the Exponential search algorithm
 
-    Searching in array: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
-    Searching in array: 5, 6, 7, 8, 9
-    Searching in array: 8, 9
-    Searching in array: 9
-    Found 999 at index: -1
+
+### [11. Advanced binary search](./104-advanced_binary.c)
+* You may have noticed that the basic binary search does not necessarily return the index of the first value in the array (if this value appears more than once in the array).
+In this exercise, you’ll have to solve this problem.
+
+
+### [12. Jump search in a singly linked list](./105-jump_list.c)
+* You might think that linear search is not as effective as any other algorithm, right? Well, we should see what happens with a singly linked list.
+
+
+### [13. Linear search in a skip list](./106-linear_skip.c)
+* As you see now, looking for a specific value in a singly linked list always leads to browse every element of the list.
+A common way to optimize the time complexity of a search in a singly linked list is to modify the list itself by adding an “express lane” to browse it.
+A linked list with an express lane is called a skip list.
+This change does not come without consequences. Indeed, the space complexity of a search in this kind of list will grow as sizeof(skiplist_t) > sizeof(listint_t) (see example below).
+
+
+### [14. Big O #6](./107-O)
+* What is the time complexity (average case) of a jump search in a singly linked list of size n, using step = sqrt(n)?
+
+
+### [15. Big O #7](./108-O)
+* What is the time complexity (average case) of a jump search in a skip list of size n, with an express lane using step = sqrt(n)?
 
 ---
 
-### Author
-
-All the code in this REPO was made by **Luis Patiño** in 2021, as part of Holberton School developer training.
-
----
-
-<div>
-<div align="center">
-<img display="block" alt="Holberton Logo" width="50%" src="https://www.holbertonschool.com/holberton-logo.png">
-</div>
-<p align="center"><b>2020</b></p>
-</div>
-
----
+## Author
+* **Lucho** - [LuisPatino92](https://github.com/LuisPatino92)
