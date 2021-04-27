@@ -1,108 +1,56 @@
-# Holberton School Project
+# 0x1A. C - Hash tables
 
->This repo is part of the Holberton School curriculum.
+## Resources:books:
+Read or watch:
+* [What is a HashTable Data Structure - Introduction to Hash Tables , Part 0](https://intranet.hbtn.io/rltoken/uodWZz-2jyHReOeToaLNdQ)
+* [Hash function](https://intranet.hbtn.io/rltoken/YiFi_oMjd9cZ4VepsS2RKQ)
+* [Hash table](https://intranet.hbtn.io/rltoken/Kswyyb1f2JY3dn-3TEckUQ)
 
-## Hash tables
+---
+## Learning Objectives:bulb:
+What you should learn from this project:
 
-This project is about Hash Tables Datastructures. In this case we worked with linked Hash Tables. Each task is a step in order to build a system that can serv as a Hash Table creator and administrator.
-
-The next ones are the structures used in order to structure the system, one for the Hash Table itself, and other for the Nodes where the information will be stored:
-
-    /**
-     * struct hash_node_s - Node of a hash table
-     *
-     * @key: The key, string
-     * The key is unique in the HashTable
-     * @value: The value corresponding to a key
-     * @next: A pointer to the next node of the List
-     */
-    typedef struct hash_node_s
-    {
-         char *key;
-         char *value;
-         struct hash_node_s *next;
-    } hash_node_t;
-
-    /**
-     * struct hash_table_s - Hash table data structure
-     *
-     * @size: The size of the array
-     * @array: An array of size @size
-     * Each cell of this array is a pointer to the first node of a linked list,
-     * because we want our HashTable to use a Chaining collision handling
-     */
-    typedef struct hash_table_s
-    {
-         unsigned long int size;
-         hash_node_t **array;
-    } hash_table_t;
+* What is a hash function
+* What makes a good hash function
+* What is a hash table, how do they work and how to use them
+* What is a collision and what are the main ways of dealing with collisions in the context of a hash table
+* What are the advantages and drawbacks of using hash tables
+* What are the most common use cases of hash tables
 
 ---
 
-## In this REPO:
+### [0. >>> ht = {}](./0-hash_table_create.c)
+* Write a function that creates a hash table.
 
->**0-[hash_table_create.c](hash_table_create.c)**
 
-Function that creates a Hash Table. Signature: `hash_table_t *hash_table_create(unsigned long int size)`. Here an instance of how the function could be used:
+### [1. djb2](./1-djb2.c)
+* Write a hash function implementing the djb2 algorithm.
 
-    julien@ubuntu:~/0x1A. Hash tables$ cat 0-main.c
-    #include <stdlib.h>
-    #include <string.h>
-    #include <stdio.h>
-    #include "hash_tables.h"
 
-    /**
-     * main - check the code for Holberton School students.
-     *
-     * Return: Always EXIT_SUCCESS.
-     */
-    int main(void)
-    {
-        hash_table_t *ht;
+### [2. key -> index](./2-key_index.c)
+* Write a function that gives you the index of a key.
 
-        ht = hash_table_create(1024);
-        printf("%p\n", (void *)ht);
-        return (EXIT_SUCCESS);
-    }
-    julien@ubuntu:~/0x1A. Hash tables$ gcc -Wall -pedantic -Werror -Wextra 0-main.c 0-hash_table_create.c -o a
-    julien@ubuntu:~/0x1A. Hash tables$ ./a
-    0x238a010
-    julien@ubuntu:~/0x1A. Hash tables$ valgrind ./a
-    ==7602== Memcheck, a memory error detector
-    ==7602== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
-    ==7602== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
-    ==7602== Command: ./a
-    ==7602==
-    0x51fc040
-    ==7602==
-    ==7602== HEAP SUMMARY:
-    ==7602==     in use at exit: 8,208 bytes in 2 blocks
-    ==7602==   total heap usage: 2 allocs, 0 frees, 8,208 bytes allocated
-    ==7602==
-    ==7602== LEAK SUMMARY:
-    ==7602==    definitely lost: 16 bytes in 1 blocks
-    ==7602==    indirectly lost: 8,192 bytes in 1 blocks
-    ==7602==      possibly lost: 0 bytes in 0 blocks
-    ==7602==    still reachable: 0 bytes in 0 blocks
-    ==7602==         suppressed: 0 bytes in 0 blocks
-    ==7602== Rerun with --leak-check=full to see details of leaked memory
-    ==7602==
-    ==7602== For counts of detected and suppressed errors, rerun with: -v
-    ==7602== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+### [3. >>> ht['betty'] = 'holberton'](./3-hash_table_set.c)
+* Write a function that adds an element to the hash table.
+
+
+### [4. >>> ht['betty']](./4-hash_table_get.c)
+* Write a function that retrieves a value associated with a key.
+
+
+### [5. >>> print(ht)](./5-hash_table_print.c)
+* Write a function that prints a hash table.
+
+
+### [6. >>> del ht](./6-hash_table_delete.c)
+* Write a function that deletes a hash table.
+
+
+### [7. $ht['Betty'] = 'Holberton'](./100-sorted_hash_table.c)
+* In PHP, hash tables are ordered. Wait… WAT? How is this even possible?
 
 ---
 
-### Author
-
-All the code in this REPO was made by **Luis Patiño** in 2020, as part of Holberton School developer training.
-
----
-
-<div>
-<div align="center">
-<img display="block" alt="Holberton Logo" width="50%" src="https://www.holbertonschool.com/holberton-logo.png">
-</div>
-<p align="center"><b>2020</b></p>
-</div>
-
----
+## Author
+* **Lucho** - [LuisPatino92](https://github.com/LuisPatino92)
